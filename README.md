@@ -17,6 +17,7 @@ TalkingRagBot is an AI-powered assistant designed to offer interactive conversat
    - [Database Setup](#database-setup)
    - [Starting the Application](#starting-the-application)
    - [Enabling Read Aloud with Piper Integration for Custom Voices](#enabling-read-aloud-with-piper-integration-for-custom-voices)
+   - [Known Issues](#known-issues)
 6. [Commands](#commands)
 7. [Usage Examples](#usage-examples)
 8. [Project Motivation](#project-motivation)
@@ -55,11 +56,16 @@ This structure will make it easy for users to navigate through the README and fi
 
 ### Prerequisites
 
-- [Node.js and npm](https://nodejs.org/en/download/package-manager)  
-- [Python (version 3.12+)](https://www.python.org/downloads/)  
-- [PostgreSQL](https://www.postgresql.org/download/)  
-- **[Read Aloud Extension (optional)](https://chrome.google.com/webstore/detail/read-aloud-a-text-to-speech/hdhinadidafjejdhmfkjgnolgimiaplp)**: Install the Read Aloud widget (available as a Chrome extension) for TTS functionality  
-- **[Piper TTS (optional)](https://github.com/rhasspy/piper)**: Piper integration in Read Aloud allows users to choose or add custom voices  
+
+### Prerequisites
+
+- [Node.js and npm](https://nodejs.org/en/download/prebuilt-installer)
+- [Python (version 3.12)](https://www.python.org/downloads/)
+- [PostgreSQL](https://www.postgresql.org/download/)
+- [Ollama](https://ollama.com/)
+- [Rust (required for some dependencies)](https://rustup.rs/)
+- **[Read Aloud Extension (optional)](https://chrome.google.com/webstore/detail/read-aloud-a-text-to-speech/hdhinadidafjejdhmfkjgnolgimiaplp)**: Install the Read Aloud widget (available as a Chrome extension) for TTS functionality
+- **[Piper TTS (optional)](https://github.com/rhasspy/piper)**: Piper integration in Read Aloud allows users to choose or add custom voices
 
 ### Installation
 
@@ -77,10 +83,26 @@ This structure will make it easy for users to navigate through the README and fi
 
 3. **Install backend dependencies**:
     ```bash
-    cd..
+    cd ..
     cd server
+    npm install
+    ```
+
+4. **Install AI dependencies**:
+    ```bash
+    cd ..
+    cd LocalAI
     pip install -r requirements.txt
     ```
+
+### Known Issues
+
+- When running `pip install -r requirements.txt`, you might encounter a wheel installation failure. If this occurs, please run the following commands to resolve the issue:
+    ```bash
+    pip install --upgrade setuptools wheel
+    pip install playsound
+    ```
+
 
 #### Database Setup
 1. Run the following commands in your PostgreSQL environment to set up the required database and tables:
