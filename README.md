@@ -69,43 +69,52 @@ This structure will make it easy for users to navigate through the README and fi
 
 ### Installation
 
+### Setup and Installation
+   
 1. **Clone the repository**:
-    ```bash
-    git clone https://github.com/xrgpublic/TalkingRagBot.git
-    cd TalkingRagBot
-    ```
+```bash
+git clone https://github.com/xrgpublic/TalkingRagBot.git
+cd TalkingRagBot
+```
 
 2. **Install frontend dependencies**:
-    ```bash
-    cd client
-    npm install
-    ```
+```bash
+cd client
+npm install
+```
 
 3. **Install backend dependencies**:
-    ```bash
-    cd ..
-    cd server
-    npm install
-    ```
+```bash
+cd ..
+cd server
+npm install
+```
 
 4. **Install AI dependencies**:
-    ```bash
-    cd ..
-    cd LocalAI
-    pip install -r requirements.txt
-    ```
+```bash
+cd ..
+cd LocalAI
+pip install -r requirements.txt
+```
 
 ### Known Issues
 
-- When running `pip install -r requirements.txt`, you might encounter a wheel installation failure. If this occurs, please run the following commands to resolve the issue:
-    ```bash
-    pip install --upgrade setuptools wheel
-    pip install playsound
-    ```
+When running `pip install -r requirements.txt`, you might encounter a wheel installation failure. If this occurs, please run the following commands to resolve the issue:
+```
+pip install --upgrade setuptools wheel
+pip install playsound
+```
 
 
 #### Database Setup
-1. Run the following commands in your PostgreSQL environment to set up the required database and tables:
+
+1. Start PostgreSQL Environment:
+   To start the PostgreSQL environment, run the following command in your command line:
+```
+psql -U postgres
+```
+   
+2. Run the following commands in your PostgreSQL environment to set up the required database and tables:
   ```sql
   CREATE USER mruser WITH PASSWORD 'isSuperCool' SUPERUSER;
   CREATE DATABASE memory_agent;
