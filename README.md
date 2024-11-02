@@ -107,7 +107,7 @@ This structure will make it easy for users to navigate through the README and fi
 #### Database Setup
 1. Run the following commands in your PostgreSQL environment to set up the required database and tables:
   ```sql
-  CREATE USER mruser WITH PASSWORD isSuperCool SUPERUSER;
+  CREATE USER mruser WITH PASSWORD 'isSuperCool' SUPERUSER;
   CREATE DATABASE memory_agent;
   GRANT ALL PRIVILEGES ON SCHEMA public TO mruser;
   GRANT ALL PRIVILEGES ON DATABASE memory_agent TO mruser;
