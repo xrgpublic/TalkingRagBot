@@ -1,0 +1,10 @@
+.App {
+  height: 100%;
+}.input-box {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  resize: none;
+  margin-right: 10px;
+}

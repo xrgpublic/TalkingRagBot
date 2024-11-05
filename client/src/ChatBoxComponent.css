@@ -1,0 +1,6 @@
+/* ChatBoxComponent.css */
+
+.chat-message.highlight {
+  background-color: #ffe599;
+  transition: background-color 0.3s ease;
+}
